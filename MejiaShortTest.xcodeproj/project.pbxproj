@@ -18,6 +18,11 @@
 		84C094191CB4EA570057CCA9 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C094181CB4EA570057CCA9 /* TableCell.m */; settings = {ASSET_TAGS = (); }; };
 		84D10C741CB989EE00954038 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D10C731CB989EE00954038 /* CoreLocation.framework */; };
 		84D10C761CBA5CD700954038 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84D10C751CBA5CD700954038 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		84DF5F161CBA72940003EB68 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF5F151CBA72940003EB68 /* MainViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84DF5F181CBAA91D0003EB68 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF5F171CBAA91D0003EB68 /* profile.png */; settings = {ASSET_TAGS = (); }; };
+		84DF5F1B1CBAABD30003EB68 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DF5F1A1CBAABD30003EB68 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84DF5F1E1CBAAF050003EB68 /* dislike.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF5F1C1CBAAF050003EB68 /* dislike.png */; settings = {ASSET_TAGS = (); }; };
+		84DF5F1F1CBAAF050003EB68 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DF5F1D1CBAAF050003EB68 /* like.png */; settings = {ASSET_TAGS = (); }; };
 		84F68AF11CBA608700A08D49 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -39,6 +44,13 @@
 		84C094181CB4EA570057CCA9 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
 		84D10C731CB989EE00954038 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84D10C751CBA5CD700954038 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = MejiaShortTest/.gitignore; sourceTree = "<group>"; };
+		84DF5F141CBA72940003EB68 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		84DF5F151CBA72940003EB68 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		84DF5F171CBAA91D0003EB68 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = profile.png; path = Resource/profile.png; sourceTree = "<group>"; };
+		84DF5F191CBAABD30003EB68 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		84DF5F1A1CBAABD30003EB68 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		84DF5F1C1CBAAF050003EB68 /* dislike.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dislike.png; path = Resource/dislike.png; sourceTree = "<group>"; };
+		84DF5F1D1CBAAF050003EB68 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = like.png; path = Resource/like.png; sourceTree = "<group>"; };
 		84F68AEF1CBA608700A08D49 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
 		84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,7 +94,11 @@
 				84C094141CB4E9990057CCA9 /* VideoListTableViewController.h */,
 				84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */,
 				84F68AEF1CBA608700A08D49 /* VideoDetailViewController.h */,
+				84DF5F191CBAABD30003EB68 /* ProfileViewController.h */,
+				84DF5F1A1CBAABD30003EB68 /* ProfileViewController.m */,
 				84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */,
+				84DF5F141CBA72940003EB68 /* MainViewController.h */,
+				84DF5F151CBA72940003EB68 /* MainViewController.m */,
 				84C094171CB4EA570057CCA9 /* TableCell.h */,
 				84C094181CB4EA570057CCA9 /* TableCell.m */,
 				84C093F61CB3A91E0057CCA9 /* Main.storyboard */,
@@ -107,6 +123,9 @@
 		84C094071CB3B7180057CCA9 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				84DF5F1C1CBAAF050003EB68 /* dislike.png */,
+				84DF5F1D1CBAAF050003EB68 /* like.png */,
+				84DF5F171CBAA91D0003EB68 /* profile.png */,
 				84C094081CB3B7250057CCA9 /* default.json */,
 			);
 			name = Resource;
@@ -169,8 +188,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DF5F1F1CBAAF050003EB68 /* like.png in Resources */,
 				84D10C761CBA5CD700954038 /* .gitignore in Resources */,
+				84DF5F181CBAA91D0003EB68 /* profile.png in Resources */,
 				84C093FD1CB3A91E0057CCA9 /* LaunchScreen.storyboard in Resources */,
+				84DF5F1E1CBAAF050003EB68 /* dislike.png in Resources */,
 				84C094091CB3B7250057CCA9 /* default.json in Resources */,
 				84C093FA1CB3A91E0057CCA9 /* Assets.xcassets in Resources */,
 				84C093F81CB3A91E0057CCA9 /* Main.storyboard in Resources */,
@@ -186,8 +208,10 @@
 			files = (
 				84C093F21CB3A91E0057CCA9 /* AppDelegate.m in Sources */,
 				84C0940C1CB3BD6C0057CCA9 /* ModelClass.m in Sources */,
+				84DF5F1B1CBAABD30003EB68 /* ProfileViewController.m in Sources */,
 				84C094161CB4E9990057CCA9 /* VideoListTableViewController.m in Sources */,
 				84F68AF11CBA608700A08D49 /* VideoDetailViewController.m in Sources */,
+				84DF5F161CBA72940003EB68 /* MainViewController.m in Sources */,
 				84C094191CB4EA570057CCA9 /* TableCell.m in Sources */,
 				84C093EF1CB3A91E0057CCA9 /* main.m in Sources */,
 			);
