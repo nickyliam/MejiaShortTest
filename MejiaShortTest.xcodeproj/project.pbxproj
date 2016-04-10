@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84C093EF1CB3A91E0057CCA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C093EE1CB3A91E0057CCA9 /* main.m */; };
+		84C093F21CB3A91E0057CCA9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C093F11CB3A91E0057CCA9 /* AppDelegate.m */; };
+		84C093F81CB3A91E0057CCA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C093F61CB3A91E0057CCA9 /* Main.storyboard */; };
+		84C093FA1CB3A91E0057CCA9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C093F91CB3A91E0057CCA9 /* Assets.xcassets */; };
+		84C093FD1CB3A91E0057CCA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C093FB1CB3A91E0057CCA9 /* LaunchScreen.storyboard */; };
+		84C094091CB3B7250057CCA9 /* default.json in Resources */ = {isa = PBXBuildFile; fileRef = 84C094081CB3B7250057CCA9 /* default.json */; settings = {ASSET_TAGS = (); }; };
+		84C0940C1CB3BD6C0057CCA9 /* ModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C0940B1CB3BD6C0057CCA9 /* ModelClass.m */; settings = {ASSET_TAGS = (); }; };
+		84C094161CB4E9990057CCA9 /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84C094191CB4EA570057CCA9 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C094181CB4EA570057CCA9 /* TableCell.m */; settings = {ASSET_TAGS = (); }; };
+		84C094201CB664670057CCA9 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84D10C741CB989EE00954038 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D10C731CB989EE00954038 /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84C093EA1CB3A91D0057CCA9 /* MejiaShortTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MejiaShortTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C093EE1CB3A91E0057CCA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84C093F01CB3A91E0057CCA9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		84C093F11CB3A91E0057CCA9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		84C093F71CB3A91E0057CCA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84C093F91CB3A91E0057CCA9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84C093FC1CB3A91E0057CCA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		84C093FE1CB3A91E0057CCA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C094081CB3B7250057CCA9 /* default.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = default.json; path = Resource/default.json; sourceTree = "<group>"; };
+		84C0940A1CB3BD6C0057CCA9 /* ModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelClass.h; sourceTree = "<group>"; };
+		84C0940B1CB3BD6C0057CCA9 /* ModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelClass.m; sourceTree = "<group>"; };
+		84C094141CB4E9990057CCA9 /* VideoListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListTableViewController.h; sourceTree = "<group>"; };
+		84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
+		84C094171CB4EA570057CCA9 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		84C094181CB4EA570057CCA9 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		84C0941E1CB664660057CCA9 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoDetailViewController.h; path = ../VideoDetailViewController.h; sourceTree = "<group>"; };
+		84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoDetailViewController.m; path = ../VideoDetailViewController.m; sourceTree = "<group>"; };
+		84D10C731CB989EE00954038 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84C093E71CB3A91D0057CCA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84D10C741CB989EE00954038 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84C093E11CB3A91D0057CCA9 = {
+			isa = PBXGroup;
+			children = (
+				84D10C731CB989EE00954038 /* CoreLocation.framework */,
+				84C093EC1CB3A91D0057CCA9 /* MejiaShortTest */,
+				84C093EB1CB3A91D0057CCA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84C093EB1CB3A91D0057CCA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84C093EA1CB3A91D0057CCA9 /* MejiaShortTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84C093EC1CB3A91D0057CCA9 /* MejiaShortTest */ = {
+			isa = PBXGroup;
+			children = (
+				84C094071CB3B7180057CCA9 /* Resource */,
+				84C093F01CB3A91E0057CCA9 /* AppDelegate.h */,
+				84C093F11CB3A91E0057CCA9 /* AppDelegate.m */,
+				84C094141CB4E9990057CCA9 /* VideoListTableViewController.h */,
+				84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */,
+				84C0941E1CB664660057CCA9 /* VideoDetailViewController.h */,
+				84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */,
+				84C094171CB4EA570057CCA9 /* TableCell.h */,
+				84C094181CB4EA570057CCA9 /* TableCell.m */,
+				84C093F61CB3A91E0057CCA9 /* Main.storyboard */,
+				84C0940A1CB3BD6C0057CCA9 /* ModelClass.h */,
+				84C0940B1CB3BD6C0057CCA9 /* ModelClass.m */,
+				84C093F91CB3A91E0057CCA9 /* Assets.xcassets */,
+				84C093FB1CB3A91E0057CCA9 /* LaunchScreen.storyboard */,
+				84C093FE1CB3A91E0057CCA9 /* Info.plist */,
+				84C093ED1CB3A91D0057CCA9 /* Supporting Files */,
+			);
+			path = MejiaShortTest;
+			sourceTree = "<group>";
+		};
+		84C093ED1CB3A91D0057CCA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84C093EE1CB3A91E0057CCA9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84C094071CB3B7180057CCA9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84C094081CB3B7250057CCA9 /* default.json */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84C093E91CB3A91D0057CCA9 /* MejiaShortTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84C094011CB3A91E0057CCA9 /* Build configuration list for PBXNativeTarget "MejiaShortTest" */;
+			buildPhases = (
+				84C093E61CB3A91D0057CCA9 /* Sources */,
+				84C093E71CB3A91D0057CCA9 /* Frameworks */,
+				84C093E81CB3A91D0057CCA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MejiaShortTest;
+			productName = MejiaShortTest;
+			productReference = 84C093EA1CB3A91D0057CCA9 /* MejiaShortTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C093E21CB3A91D0057CCA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Kaho;
+				TargetAttributes = {
+					84C093E91CB3A91D0057CCA9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 84C093E51CB3A91D0057CCA9 /* Build configuration list for PBXProject "MejiaShortTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84C093E11CB3A91D0057CCA9;
+			productRefGroup = 84C093EB1CB3A91D0057CCA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84C093E91CB3A91D0057CCA9 /* MejiaShortTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84C093E81CB3A91D0057CCA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C093FD1CB3A91E0057CCA9 /* LaunchScreen.storyboard in Resources */,
+				84C094091CB3B7250057CCA9 /* default.json in Resources */,
+				84C093FA1CB3A91E0057CCA9 /* Assets.xcassets in Resources */,
+				84C093F81CB3A91E0057CCA9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84C093E61CB3A91D0057CCA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84C093F21CB3A91E0057CCA9 /* AppDelegate.m in Sources */,
+				84C0940C1CB3BD6C0057CCA9 /* ModelClass.m in Sources */,
+				84C094161CB4E9990057CCA9 /* VideoListTableViewController.m in Sources */,
+				84C094201CB664670057CCA9 /* VideoDetailViewController.m in Sources */,
+				84C094191CB4EA570057CCA9 /* TableCell.m in Sources */,
+				84C093EF1CB3A91E0057CCA9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		84C093F61CB3A91E0057CCA9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C093F71CB3A91E0057CCA9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		84C093FB1CB3A91E0057CCA9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84C093FC1CB3A91E0057CCA9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84C093FF1CB3A91E0057CCA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		84C094001CB3A91E0057CCA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84C094021CB3A91E0057CCA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MejiaShortTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kaho.MejiaShortTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		84C094031CB3A91E0057CCA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MejiaShortTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Kaho.MejiaShortTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84C093E51CB3A91D0057CCA9 /* Build configuration list for PBXProject "MejiaShortTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C093FF1CB3A91E0057CCA9 /* Debug */,
+				84C094001CB3A91E0057CCA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84C094011CB3A91E0057CCA9 /* Build configuration list for PBXNativeTarget "MejiaShortTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84C094021CB3A91E0057CCA9 /* Debug */,
+				84C094031CB3A91E0057CCA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84C093E21CB3A91D0057CCA9 /* Project object */;
+}

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lqx-Ig-D7K">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Video List Table View Controller-->
+        <scene sceneID="ojW-Vd-n5x">
+            <objects>
+                <tableViewController id="OeF-Da-ubO" customClass="VideoListTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KgL-yu-iDi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="Ib8-jc-5BU">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="OeF-Da-ubO" id="yr0-bi-LtQ"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="9Ui-7m-ZPo" style="IBUITableViewCellStyleDefault" id="Kd7-JE-gD0" customClass="TableCell">
+                                <rect key="frame" x="0.0" y="158" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kd7-JE-gD0" id="d4S-0v-hWu">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ui-7m-ZPo">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="videoID" destination="9Ui-7m-ZPo" id="eTr-o4-Tcl"/>
+                                    <segue destination="301-W6-29b" kind="show" identifier="showVideoDetail" id="L7B-uB-jcx"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OeF-Da-ubO" id="pX3-St-dn3"/>
+                            <outlet property="delegate" destination="OeF-Da-ubO" id="H58-bw-XTz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Wpv-Cb-wlb">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D31-aP-EaI">
+                            <rect key="frame" x="96" y="-15" width="128" height="73"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Location"/>
+                            <connections>
+                                <action selector="getCurrentLocation:" destination="OeF-Da-ubO" eventType="touchUpInside" id="hQn-xS-bSA"/>
+                                <action selector="getCurrentLocation:" destination="301-W6-29b" eventType="touchUpInside" id="jbr-Gd-F7n"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="SGv-IE-Rsq" id="7Ag-y8-tE3"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nL0-zu-Ouq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="SGv-IE-Rsq">
+                    <connections>
+                        <outlet property="delegate" destination="OeF-Da-ubO" id="H4G-Qu-3s9"/>
+                        <outlet property="searchBar" destination="Ib8-jc-5BU" id="Hbs-BW-P1Q"/>
+                        <outlet property="searchContentsController" destination="OeF-Da-ubO" id="mB5-8C-Znr"/>
+                        <outlet property="searchResultsDataSource" destination="OeF-Da-ubO" id="7uA-xk-ZkC"/>
+                        <outlet property="searchResultsDelegate" destination="OeF-Da-ubO" id="RIh-62-37U"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2103" y="36"/>
+        </scene>
+        <!--Video Detail View Controller-->
+        <scene sceneID="QA0-wX-Nv3">
+            <objects>
+                <viewController id="301-W6-29b" customClass="VideoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y9T-ht-eJe"/>
+                        <viewControllerLayoutGuide type="bottom" id="r7k-bi-GmY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YLZ-Ep-axj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are watching the video in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNT-DL-B4v">
+                                <rect key="frame" x="18" y="27" width="224" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoLink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS5-ol-GLJ">
+                                <rect key="frame" x="23" y="80" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <webView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-WT-0bu">
+                                <rect key="frame" x="18" y="109" width="280" height="180"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userLocation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z20-y8-spR">
+                                <rect key="frame" x="122" y="51" width="186" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="userLocationLabel" destination="Z20-y8-spR" id="gy6-iQ-bmw"/>
+                        <outlet property="videoURLLabel" destination="DS5-ol-GLJ" id="64S-mY-nOh"/>
+                        <outlet property="webView" destination="IXp-WT-0bu" id="dZI-Rp-SXq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEs-3S-XhY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2578" y="36"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nWc-Zt-aJQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Lqx-Ig-D7K" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="PmI-LK-9O4">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bdA-gH-uPx" kind="relationship" relationship="viewControllers" id="f6l-uJ-cE4"/>
+                        <segue destination="nla-J0-8h7" kind="relationship" relationship="viewControllers" id="a55-G1-VtL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EIB-ou-5P8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="382"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="Ihr-4C-apV">
+            <objects>
+                <tableViewController id="xNG-90-2Zs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Root View Controller" id="K1j-f3-5Gl"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xw5-19-nyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1572" y="814"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bvi-aP-T5G">
+            <objects>
+                <navigationController id="nla-J0-8h7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="more" id="HuQ-5i-uHX"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="brp-iZ-wfJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xNG-90-2Zs" kind="relationship" relationship="rootViewController" id="439-ul-jUV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lW-5C-6ZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="814"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xdk-bi-GbW">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xb-Ht-OPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bdA-gH-uPx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="topRated" id="yf5-fJ-Nda"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fsY-Bl-wzi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OeF-Da-ubO" kind="relationship" relationship="rootViewController" id="6mD-qK-VwO"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1571" y="36"/>
+        </scene>
+    </scenes>
+</document>
