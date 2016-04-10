@@ -16,8 +16,9 @@
 		84C0940C1CB3BD6C0057CCA9 /* ModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C0940B1CB3BD6C0057CCA9 /* ModelClass.m */; settings = {ASSET_TAGS = (); }; };
 		84C094161CB4E9990057CCA9 /* VideoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		84C094191CB4EA570057CCA9 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C094181CB4EA570057CCA9 /* TableCell.m */; settings = {ASSET_TAGS = (); }; };
-		84C094201CB664670057CCA9 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		84D10C741CB989EE00954038 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D10C731CB989EE00954038 /* CoreLocation.framework */; };
+		84D10C761CBA5CD700954038 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84D10C751CBA5CD700954038 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		84F68AF11CBA608700A08D49 /* VideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,9 +37,10 @@
 		84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListTableViewController.m; sourceTree = "<group>"; };
 		84C094171CB4EA570057CCA9 /* TableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
 		84C094181CB4EA570057CCA9 /* TableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
-		84C0941E1CB664660057CCA9 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoDetailViewController.h; path = ../VideoDetailViewController.h; sourceTree = "<group>"; };
-		84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoDetailViewController.m; path = ../VideoDetailViewController.m; sourceTree = "<group>"; };
 		84D10C731CB989EE00954038 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84D10C751CBA5CD700954038 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = MejiaShortTest/.gitignore; sourceTree = "<group>"; };
+		84F68AEF1CBA608700A08D49 /* VideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDetailViewController.h; sourceTree = "<group>"; };
+		84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		84C093E11CB3A91D0057CCA9 = {
 			isa = PBXGroup;
 			children = (
+				84D10C751CBA5CD700954038 /* .gitignore */,
 				84D10C731CB989EE00954038 /* CoreLocation.framework */,
 				84C093EC1CB3A91D0057CCA9 /* MejiaShortTest */,
 				84C093EB1CB3A91D0057CCA9 /* Products */,
@@ -78,8 +81,8 @@
 				84C093F11CB3A91E0057CCA9 /* AppDelegate.m */,
 				84C094141CB4E9990057CCA9 /* VideoListTableViewController.h */,
 				84C094151CB4E9990057CCA9 /* VideoListTableViewController.m */,
-				84C0941E1CB664660057CCA9 /* VideoDetailViewController.h */,
-				84C0941F1CB664670057CCA9 /* VideoDetailViewController.m */,
+				84F68AEF1CBA608700A08D49 /* VideoDetailViewController.h */,
+				84F68AF01CBA608700A08D49 /* VideoDetailViewController.m */,
 				84C094171CB4EA570057CCA9 /* TableCell.h */,
 				84C094181CB4EA570057CCA9 /* TableCell.m */,
 				84C093F61CB3A91E0057CCA9 /* Main.storyboard */,
@@ -166,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D10C761CBA5CD700954038 /* .gitignore in Resources */,
 				84C093FD1CB3A91E0057CCA9 /* LaunchScreen.storyboard in Resources */,
 				84C094091CB3B7250057CCA9 /* default.json in Resources */,
 				84C093FA1CB3A91E0057CCA9 /* Assets.xcassets in Resources */,
@@ -183,7 +187,7 @@
 				84C093F21CB3A91E0057CCA9 /* AppDelegate.m in Sources */,
 				84C0940C1CB3BD6C0057CCA9 /* ModelClass.m in Sources */,
 				84C094161CB4E9990057CCA9 /* VideoListTableViewController.m in Sources */,
-				84C094201CB664670057CCA9 /* VideoDetailViewController.m in Sources */,
+				84F68AF11CBA608700A08D49 /* VideoDetailViewController.m in Sources */,
 				84C094191CB4EA570057CCA9 /* TableCell.m in Sources */,
 				84C093EF1CB3A91E0057CCA9 /* main.m in Sources */,
 			);
