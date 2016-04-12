@@ -19,17 +19,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self readJson];
-    self.searchResult = [NSMutableArray arrayWithCapacity:[self.objectHolderArray count]];
     
-    //    [self getCurrentLocation];
+    self.searchResult = [NSMutableArray arrayWithCapacity:[self.objectHolderArray count]];
+    NSLog(@"username:%@",self.username);
     self.locationManager = [[CLLocationManager alloc] init];
     self.geocoder = [[CLGeocoder alloc] init];
+    [self getCurrentLocation];
 
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
@@ -46,13 +46,15 @@
     }
     
     if ( jsonObject != nil ) {
-        NSArray *array = [jsonObject objectForKey:@"videos"];
-        // Iterate through the array of dictionaries
-        for(NSDictionary *dict in array) {
-            NSString *videoURL = [dict objectForKey:@"video"];
-            NSString *videoNo = [dict objectForKey:@"nombre"];
-            ModelClass *currentVideo = [[ModelClass alloc]initWithId:videoNo Name:videoURL];
-            [self.objectHolderArray addObject:currentVideo];
+        BOOL isEmpty = ([jsonObject count] == 0);
+            if(!isEmpty){
+            NSArray *array = [jsonObject objectForKey:@"videos"];
+            for(NSDictionary *dict in array) {
+                NSString *videoURL = [dict objectForKey:@"video"];
+                NSString *videoNo = [dict objectForKey:@"nombre"];
+                ModelClass *currentVideo = [[ModelClass alloc]initWithId:videoNo Name:videoURL];
+                [self.objectHolderArray addObject:currentVideo];
+            }
         }
     }
 }
@@ -79,7 +81,6 @@
     
     return YES;
 }
-
 
 
 
@@ -141,14 +142,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    if (tableView == self.searchDisplayController.searchResultsTableView) {
-    //        [self performSegueWithIdentifier: @"showVideoDetail" sender: self];
-    //    }
+
 }
 
 // ========+++++++++++++++++============
-- (IBAction)getCurrentLocation:(id)sender{
-    //-(void)getCurrentLocation{
+
+
+- (IBAction)logOut:(id)sender {
+
+}
+
+
+//- (IBAction)getCurrentLocation:(id)sender{ //FOR TESTING _ create button at storyboard for testing
+-(void)getCurrentLocation{
     _locationFetchCounter = 0;
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -164,16 +170,15 @@
     NSLog(@"didFailWithError: %@", error);
     UIAlertView *errorAlert = [[UIAlertView alloc]
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [errorAlert show];
+//    [errorAlert show];
 }
 
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    
     // this delegate method is constantly invoked every some miliseconds.
     // we only need to receive the first response, so we skip the others.
-    if (_locationFetchCounter > 0) return;
+//    if (_locationFetchCounter > 0) return;
     _locationFetchCounter++;
     NSLog(@"location Fetch Counter: %d",_locationFetchCounter);
     
@@ -184,8 +189,11 @@
         self.userLocation = [NSString stringWithFormat:@"%@,%@", self.placemark.locality,self.placemark.country];
         NSLog(@"we live in %@",self.userLocation);
         
+        if (_locationFetchCounter > 1) {
+            
         // stopping locationManager from fetching again
         [self.locationManager stopUpdatingLocation];
+        }
         
     }];
 }
@@ -197,9 +205,12 @@
     [self.navigationController pushViewController:profileController animated:YES];
 }
 
+
+
 // ========  SEGUE Passing Value ============
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"currentuser name%@",self.username);
     if ([segue.identifier isEqualToString:@"showVideoDetail"]) {
         //        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         VideoDetailViewController *destViewController = segue.destinationViewController;
@@ -216,50 +227,21 @@
             currentVideo = [self.objectHolderArray objectAtIndex:indexPath.row];
         }
         
+        destViewController.videoId = [NSString stringWithFormat:@"%@",currentVideo.videoId];
         destViewController.videoURL = [NSString stringWithFormat:@"%@",currentVideo.videoURL];
         destViewController.userLocation = [NSString stringWithFormat:@"%@",self.userLocation];
-        NSLog(@"being passed %@",self.userLocation);
+        destViewController.userCountry = [NSString stringWithFormat:@"%@",self.placemark.country];
+        destViewController.username =[NSString stringWithFormat:@"%@",self.username];
     }
+    else if ([segue.identifier isEqualToString:@"showProfileView"]) {
+        ProfileViewController *destViewController = segue.destinationViewController;
+        destViewController.username = [NSString stringWithFormat:@"%@",self.username];
+    }
+    
 }
 
 
 // ========++++++++++++++++++============
-
-
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
-
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }
- }
- */
-
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 
 
 

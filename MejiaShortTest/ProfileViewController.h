@@ -15,6 +15,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *userAddress;
 @property (weak, nonatomic) IBOutlet UITextField *userPhone;
 @property (weak, nonatomic) IBOutlet UITextField *userEmail;
+@property (strong, nonatomic) NSString *username;
 - (IBAction)SaveProfile:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
+
+- (NSDictionary *)parseJsonResponse:(NSString *)urlString;
+
 @end

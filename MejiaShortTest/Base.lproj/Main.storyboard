@@ -1,84 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lqx-Ig-D7K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2jz-tM-QX6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Video List Table View Controller-->
-        <scene sceneID="ojW-Vd-n5x">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nL0-zu-Ouq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="OeF-Da-ubO" customClass="VideoListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="KgL-yu-iDi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Ib8-jc-5BU">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="OeF-Da-ubO" id="yr0-bi-LtQ"/>
-                            </connections>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="9Ui-7m-ZPo" style="IBUITableViewCellStyleDefault" id="Kd7-JE-gD0" customClass="TableCell">
-                                <rect key="frame" x="0.0" y="94" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Kd7-JE-gD0" id="d4S-0v-hWu">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="video" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Ui-7m-ZPo">
-                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="videoID" destination="9Ui-7m-ZPo" id="eTr-o4-Tcl"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="OeF-Da-ubO" id="pX3-St-dn3"/>
-                            <outlet property="delegate" destination="OeF-Da-ubO" id="H58-bw-XTz"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="Wpv-Cb-wlb">
-                        <nil key="title"/>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="D31-aP-EaI">
-                            <rect key="frame" x="96" y="-15" width="128" height="73"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Location"/>
-                            <connections>
-                                <action selector="getCurrentLocation:" destination="OeF-Da-ubO" eventType="touchUpInside" id="hQn-xS-bSA"/>
-                                <action selector="getCurrentLocation:" destination="301-W6-29b" eventType="touchUpInside" id="jbr-Gd-F7n"/>
-                            </connections>
-                        </button>
-                    </navigationItem>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="SGv-IE-Rsq" id="7Ag-y8-tE3"/>
-                    </connections>
-                </tableViewController>
-                <searchDisplayController id="SGv-IE-Rsq">
-                    <connections>
-                        <outlet property="delegate" destination="OeF-Da-ubO" id="H4G-Qu-3s9"/>
-                        <outlet property="searchBar" destination="Ib8-jc-5BU" id="Hbs-BW-P1Q"/>
-                        <outlet property="searchContentsController" destination="OeF-Da-ubO" id="mB5-8C-Znr"/>
-                        <outlet property="searchResultsDataSource" destination="OeF-Da-ubO" id="7uA-xk-ZkC"/>
-                        <outlet property="searchResultsDelegate" destination="OeF-Da-ubO" id="RIh-62-37U"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="1407" y="-952"/>
-        </scene>
         <!--Video Detail View Controller-->
         <scene sceneID="QA0-wX-Nv3">
             <objects>
@@ -97,12 +22,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VideoLink" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS5-ol-GLJ">
-                                <rect key="frame" x="23" y="80" width="275" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <webView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IXp-WT-0bu">
                                 <rect key="frame" x="18" y="109" width="280" height="180"/>
                             </webView>
@@ -115,10 +34,16 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk9-aM-pCr">
                                 <rect key="frame" x="237" y="303" width="56" height="54"/>
                                 <state key="normal" title="dislike" image="dislike.png"/>
+                                <connections>
+                                    <action selector="dislikeButton:" destination="301-W6-29b" eventType="touchUpInside" id="6z7-6s-xRr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2f-Xs-1f0">
                                 <rect key="frame" x="154" y="304" width="54" height="53"/>
                                 <state key="normal" title="Like" image="like.png"/>
+                                <connections>
+                                    <action selector="likeButton:" destination="301-W6-29b" eventType="touchUpInside" id="ila-SB-hcS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,8 +52,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="dislikeButton" destination="vk9-aM-pCr" id="VJQ-Lp-PyI"/>
+                        <outlet property="likeButton" destination="L2f-Xs-1f0" id="o8Z-eP-WIY"/>
                         <outlet property="userLocationLabel" destination="Z20-y8-spR" id="gy6-iQ-bmw"/>
-                        <outlet property="videoURLLabel" destination="DS5-ol-GLJ" id="64S-mY-nOh"/>
                         <outlet property="webView" destination="IXp-WT-0bu" id="dZI-Rp-SXq"/>
                     </connections>
                 </viewController>
@@ -136,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="2054" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--loginViewController-->
         <scene sceneID="wOO-76-hHV">
             <objects>
-                <viewController id="2jz-tM-QX6" sceneMemberID="viewController">
+                <viewController title="loginViewController" id="2jz-tM-QX6" customClass="loginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MZH-iu-qcD"/>
                         <viewControllerLayoutGuide type="bottom" id="uSg-tJ-pA4"/>
@@ -147,34 +73,68 @@
                     <view key="view" contentMode="scaleToFill" id="3l8-HB-yV9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-lN-KIQ">
+                                <rect key="frame" x="122" y="401" width="77" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="LOGIN"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="2jz-tM-QX6" eventType="touchUpInside" id="3S9-pg-Kt3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USERNAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-jr-CuL">
+                                <rect key="frame" x="20" y="228" width="91" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PASSWORD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avb-u9-5q6">
+                                <rect key="frame" x="20" y="322" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="64k-sY-cdB">
+                                <rect key="frame" x="140" y="219" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2jz-tM-QX6" id="YTK-TY-tZk"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQA-Hf-jgN">
+                                <rect key="frame" x="140" y="318" width="160" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2jz-tM-QX6" id="Xbd-hs-XXk"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qh5-Vh-Yq0" appends="YES" id="CJn-Hg-kR3"/>
+                        </connections>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="password" destination="cQA-Hf-jgN" id="yXu-eD-WmN"/>
+                        <outlet property="username" destination="64k-sY-cdB" id="bTp-mI-HAd"/>
+                        <segue destination="bdA-gH-uPx" kind="showDetail" identifier="loginsuccess" animates="NO" id="bhG-ug-x3u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8dN-AF-vT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-9" y="377"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="nWc-Zt-aJQ">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Lqx-Ig-D7K" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="PmI-LK-9O4">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
+                <tapGestureRecognizer id="qh5-Vh-Yq0">
                     <connections>
-                        <segue destination="bdA-gH-uPx" kind="relationship" relationship="viewControllers" id="f6l-uJ-cE4"/>
+                        <action selector="backgroundTap:" destination="2jz-tM-QX6" id="zRC-P9-fbb"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EIB-ou-5P8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="468" y="382"/>
+            <point key="canvasLocation" x="403" y="247"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bvi-aP-T5G">
@@ -406,13 +366,6 @@
                                     <outlet property="delegate" destination="kY9-sr-YZ9" id="LM3-4n-Uxj"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J1-AD-hRd">
-                                <rect key="frame" x="93" y="391" width="84" height="30"/>
-                                <state key="normal" title="GetLocation"/>
-                                <connections>
-                                    <action selector="getCurrentLocation:" destination="kY9-sr-YZ9" eventType="touchUpInside" id="E4S-h5-bGk"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZC-NV-yDZ">
                                 <rect key="frame" x="210" y="347" width="90" height="88"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -422,7 +375,7 @@
                                 </state>
                                 <connections>
                                     <action selector="profileButton:" destination="kY9-sr-YZ9" eventType="touchUpInside" id="nhU-Uf-Mfa"/>
-                                    <segue destination="4V9-xc-Z6p" kind="show" id="ibR-3x-nZA"/>
+                                    <segue destination="4V9-xc-Z6p" kind="show" identifier="showProfileView" id="ibR-3x-nZA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -430,7 +383,19 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Item" id="prs-mx-hjp"/>
-                    <navigationItem key="navigationItem" title="VIDEO LISTS" id="DeF-AJ-kvZ"/>
+                    <navigationItem key="navigationItem" title="VIDEO LISTS" id="DeF-AJ-kvZ">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1bV-jO-zUw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G3J-Xs-nNz">
+                                <rect key="frame" x="233" y="7" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="kY9-sr-YZ9" eventType="touchUpInside" id="Kob-J6-LYZ"/>
+                                    <segue destination="VSt-MX-BXg" kind="unwind" animates="NO" unwindAction="prepareForUnwind:" id="eBc-62-3Ov"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
@@ -440,6 +405,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlo-IN-gNq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VSt-MX-BXg" userLabel="Exit" sceneMemberID="exit"/>
                 <searchDisplayController id="WIR-Nd-4Ip">
                     <connections>
                         <outlet property="delegate" destination="kY9-sr-YZ9" id="VT5-vV-Zg3"/>
@@ -450,15 +416,16 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1536" y="32"/>
+            <point key="canvasLocation" x="1458" y="8"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xdk-bi-GbW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5xb-Ht-OPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bdA-gH-uPx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="topRated" id="yf5-fJ-Nda"/>
                     <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fsY-Bl-wzi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -468,8 +435,9 @@
                         <segue destination="kY9-sr-YZ9" kind="relationship" relationship="rootViewController" id="DvT-fK-vez"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xb-Ht-OPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1055" y="32"/>
+            <point key="canvasLocation" x="947" y="8"/>
         </scene>
     </scenes>
     <resources>

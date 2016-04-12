@@ -18,21 +18,33 @@
 
 
 - (void)viewDidLoad {
-    
-    
+    [super viewDidLoad];
     [self embedYouTube:self.videoURL];
-    NSLog(@"%@",self.videoURL);
-    
+    [self getLikeValue:self.videoId];
     self.videoURLLabel.text = [NSString stringWithFormat:@"%@",self.videoURL];
     
     self.userLocationLabel.text = [NSString stringWithFormat:@"%@",self.userLocation];
-    [super viewDidLoad];
+  
+    if(_isVoted){
+        self.update = @"update";
+        if([_likeValue isEqualToString:@"disliked"]){
+            self.likeButton.enabled = YES;
+            self.dislikeButton.enabled = NO;
+            
+        }else if ([_likeValue isEqualToString:@"liked"]){
+            self.likeButton.enabled = NO;
+            self.dislikeButton.enabled = YES;
+        }
+    }
+}
 
+-(void)refreshView:(NSNotification *) notification {
+    [self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 
@@ -58,9 +70,8 @@
 -(NSString *)extractVimeoID:(NSString *)vimeoURL
 {
     NSString *vID = nil;
-    NSString *url = @"https://vimeo.com/50713841";
     
-    NSString *query = [url componentsSeparatedByString:@"vimeo"][1];
+    NSString *query = [vimeoURL componentsSeparatedByString:@"vimeo"][1];
     NSArray *pairs = [query componentsSeparatedByString:@" "];
     for (NSString *pair in pairs) {
         NSArray *kv = [pair componentsSeparatedByString:@"/"];
@@ -92,16 +103,6 @@
 - (void)embedYouTube:(NSString *)URL
 {
 
-//    CGRect screenRect = [[UIScreen mainScreen] bounds];
-//    CGFloat screenWidth = screenRect.size.width;
-//    CGFloat screenHeight = screenRect.size.height;
-//    
-//    CGFloat point = (screenRect.size.width - self.webView.frame.size.width)/2 ;
-//     NSLog(@"%f",screenRect.size.width);
-//     self.webView.center = CGPointMake( self.webView.frame.size.width  / 2,
-//                                      self.webView.frame.size.height / 2);
-//
-
     if ([URL rangeOfString:@"vimeo" options:NSCaseInsensitiveSearch].location != NSNotFound){
         NSString *UrlID = [self extractVimeoID:URL];
         [self playVimeo:UrlID];
@@ -129,16 +130,118 @@
 }
 
 
+-(void)getLikeValue: (NSString*)forVideo{
+    NSString *URL = [NSString stringWithFormat:@"http://localhost/~admin/MejiaTestServer/profile.php?q=getlikefeature&username=%@",self.username];
+    
+    ProfileViewController *profileView = [[ProfileViewController alloc]init];
+    
+    NSDictionary *jsonObject = [profileView parseJsonResponse:URL];
+    if ( jsonObject != nil ) {
+//        NSString *count = [NSString stringWithFormat:@"%lu",(unsigned long)[jsonObject count]];
+//        if(![count isEqualToString:@"0"] ){
+        BOOL isEmpty = ([jsonObject count] == 0);
+        if(!isEmpty){
+            NSDictionary *data  = [jsonObject objectForKey:forVideo];
+            NSString *Result = [data objectForKey:@"liked"];
+            if(Result != nil){
+                _isVoted = true;
+                _likeValue = Result;
+            }else{
+                _isVoted = false;
+                _likeValue = @"";
+            }
+        }
+    
+    }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+
+- (IBAction)likeButton:(id)sender{
+   
+    [self sendValueToServer: @"liked" Update:self.update];
+    [self viewDidLoad];
+}
+
+- (IBAction)dislikeButton:(id)sender{
+    [self sendValueToServer: @"disliked" Update:self.update];
+    [self viewDidLoad];
+}
+
+- (void)sendValueToServer:(NSString*)like Update:(NSString*)value
+{
+    
+    NSString *sentence = [NSString stringWithFormat:@"You have %@ this video",like];
+    UIAlertView *alertReport = [[UIAlertView alloc] initWithTitle:@"THANK YOU"
+                                                          message:sentence
+                                                         delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil];
+    [alertReport show];
+    
+    NSString *path ;
+    if([value isEqualToString:@"update"]){
+        path = @"updatevote";
+    }else{
+        path = @"likefeature";
+    }
+ ;
+    // Sending image Id and app name to server
+    NSString *urlString = [NSString stringWithFormat:@"http://localhost/~admin/MejiaTestServer/profile.php?q=%@&username=%@",path, self.username];
+    
+    NSLog(@"%@",urlString);
+    // setting up the request object now
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSString *boundary = @"---------------------------14737809831466499882746641449";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+    //Create the body of the post
+    NSMutableData *body = [NSMutableData data];
+    
+    
+    // Text parameter1
+    NSString *country = [NSString stringWithFormat:@"%@",self.userCountry ];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"country\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:country] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    // Another text parameter
+    
+    NSString *videoId = [NSString stringWithFormat:@"%@",self.videoId];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"videoId\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:videoId] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+
+
+    // Another text parameter
+    NSString *liked = [NSString stringWithFormat:@"%@",like ];
+    [body appendData:[[NSString stringWithFormat:@"--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"liked\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithString:liked] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // close form
+    [body appendData:[[NSString stringWithFormat:@"--%@--\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // setting the body of the post to the reqeust
+    [request setHTTPBody:body];
+    
+    // make the connection to the web
+    
+    NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", returnString);
+    
+}
+
+
 
 @end

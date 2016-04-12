@@ -12,8 +12,6 @@
 
 @interface TableCell : UITableViewCell
 
-//@property (nonatomic,strong) NSArray *videoList;
-
 
 //@property (weak, nonatomic) IBOutlet UILabel *videoURL;
 @property (weak, nonatomic) IBOutlet UILabel *videoID;
