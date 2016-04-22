@@ -16,8 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    _isUserValid = true; //FOR TESTING
-//    self.username.text = @"test"; //FOR TESTING
+    _isUserValid = true; //FOR TESTING
+    self.username.text = @"test"; //FOR TESTING
 }
 
 - (void)didReceiveMemoryWarning {
