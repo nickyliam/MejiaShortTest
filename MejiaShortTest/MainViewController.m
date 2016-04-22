@@ -24,7 +24,7 @@
     NSLog(@"username:%@",self.username);
     self.locationManager = [[CLLocationManager alloc] init];
     self.geocoder = [[CLGeocoder alloc] init];
-    [self getCurrentLocation];
+//    [self getCurrentLocation];
 
 }
 
@@ -153,8 +153,8 @@
 }
 
 
-//- (IBAction)getCurrentLocation:(id)sender{ //FOR TESTING _ create button at storyboard for testing
--(void)getCurrentLocation{
+- (IBAction)getCurrentLocation:(id)sender{ //FOR TESTING _ create button at storyboard for testing
+//-(void)getCurrentLocation{
     _locationFetchCounter = 0;
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -178,7 +178,7 @@
 {
     // this delegate method is constantly invoked every some miliseconds.
     // we only need to receive the first response, so we skip the others.
-//    if (_locationFetchCounter > 0) return;
+    if (_locationFetchCounter > 0) return;
     _locationFetchCounter++;
     NSLog(@"location Fetch Counter: %d",_locationFetchCounter);
     
@@ -189,12 +189,10 @@
         self.userLocation = [NSString stringWithFormat:@"%@,%@", self.placemark.locality,self.placemark.country];
         NSLog(@"we live in %@",self.userLocation);
         
-        if (_locationFetchCounter > 1) {
-            
+
         // stopping locationManager from fetching again
         [self.locationManager stopUpdatingLocation];
-        }
-        
+
     }];
 }
 
