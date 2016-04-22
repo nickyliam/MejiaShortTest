@@ -27,7 +27,7 @@
 @property(nonatomic,strong) CLPlacemark *placemark;
 @property(nonatomic) int locationFetchCounter;
 - (IBAction)logOut:(id)sender;
-- (IBAction)getCurrentLocation:(id)sender;//testing..delete
+//- (IBAction)getCurrentLocation:(id)sender;//testing..delete
 - (IBAction)profileButton:(id)sender;
 -(void)getCurrentLocation;
 

@@ -24,7 +24,7 @@
     NSLog(@"username:%@",self.username);
     self.locationManager = [[CLLocationManager alloc] init];
     self.geocoder = [[CLGeocoder alloc] init];
-//    [self getCurrentLocation];
+    [self getCurrentLocation];
 
 }
 
@@ -153,8 +153,8 @@
 }
 
 
-- (IBAction)getCurrentLocation:(id)sender{ //FOR TESTING _ create button at storyboard for testing
-//-(void)getCurrentLocation{
+//- (IBAction)getCurrentLocation:(id)sender{ //FOR TESTING _ create button at storyboard for testing
+-(void)getCurrentLocation{
     _locationFetchCounter = 0;
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;

@@ -379,13 +379,6 @@
                                     <segue destination="4V9-xc-Z6p" kind="show" identifier="showProfileView" id="ibR-3x-nZA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qv5-GI-D4f">
-                                <rect key="frame" x="66" y="367" width="88" height="30"/>
-                                <state key="normal" title="Get Location"/>
-                                <connections>
-                                    <action selector="getCurrentLocation:" destination="kY9-sr-YZ9" eventType="touchUpInside" id="fle-rF-kVp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
