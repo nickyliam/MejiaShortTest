@@ -1,6 +1,6 @@
 //
 //  loginViewController.m
-//  MejiaShortTest
+//  MejiaApp
 //
 //  Created by admin on 4/12/16.
 //  Copyright © 2016 Kaho. All rights reserved.
@@ -16,8 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _isUserValid = true; //FOR TESTING
-    self.username.text = @"test"; //FOR TESTING
+    _isTest =  true ; // true for test, false if server is used
+    self.isUserValid = true; //Comment if server is used
+    self.username.text = @"test"; //FComment if server is used
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +28,9 @@
 
 
 - (IBAction)loginButton:(id)sender {
-    [self getLoginUsers];
+    if (_isTest != true) {
+        [self getLoginUsers];
+    }
     if(self.isUserValid){
         [self performSegueWithIdentifier:@"loginsuccess" sender:self];
     }else{

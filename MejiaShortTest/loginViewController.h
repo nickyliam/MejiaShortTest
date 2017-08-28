@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property(nonatomic) bool isUserValid;
+@property(nonatomic) bool isTest;
 - (IBAction)loginButton:(id)sender;
 - (IBAction)backgroundTap:(id)sender;
 
